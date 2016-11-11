@@ -1,17 +1,21 @@
-package org.usfirst.frc.team1710.robot;
+package commands;
+
+import org.usfirst.frc.team1710.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class Suck extends Command {
-	double speedPublic;
-	int timePublic;
-	boolean done;
-    public Suck(double speed, int time) {
-    	speedPublic = speed;
-    	timePublic = time;
+public class Turn4Time extends Command {
+double movepowerPublic;
+double turnpowerPublic;
+int timePublic;
+boolean done;
+    public Turn4Time(double movepower, double turnpower, int time) {
+        movepowerPublic = movepower;
+        turnpowerPublic= turnpower;
+        timePublic = time;
     }
 
     // Called just before this Command runs the first time
@@ -20,20 +24,28 @@ public class Suck extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	for(int i = 0;i < timePublic/20;i++){
-    		Intake.intakeSuck(speedPublic);
+    	
+    	for (int I = 0; I < timePublic/20; I++){
+    		RobotMap.driveTrain.arcadeDrive(movepowerPublic, turnpowerPublic);
+    		
     	}
     	done = true;
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if(done = true){
-    		return true;
+    
+    	if(done == true){
+   
+    	return true;
     	}
     	else {
-        return false;
+   return false; 		
+    		
+    		
     	}
+		
     }
 
     // Called once after isFinished returns true

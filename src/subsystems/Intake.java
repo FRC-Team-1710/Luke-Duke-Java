@@ -1,4 +1,6 @@
-package org.usfirst.frc.team1710.robot;
+package subsystems;
+
+import org.usfirst.frc.team1710.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 

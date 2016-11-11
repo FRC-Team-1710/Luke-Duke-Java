@@ -1,5 +1,8 @@
-package org.usfirst.frc.team1710.robot;
+package autoModes;
 
+import commands.ForwardTime;
+import commands.Shoot;
+import commands.Suck;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
