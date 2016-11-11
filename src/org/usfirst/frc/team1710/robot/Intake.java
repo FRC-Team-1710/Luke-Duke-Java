@@ -22,4 +22,3 @@ public class Intake extends Subsystem {
     	RobotMap.intakeR.set(-speed);
     }
 }
-
