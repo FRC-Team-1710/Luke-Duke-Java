@@ -13,7 +13,7 @@ public class Intake extends Subsystem {
     	RobotMap.intakeR.set(0);
     	RobotMap.sucker.set(0);
     }
-    public void intakeSuck(double speed){
+    public static void intakeSuck(double speed){
     	RobotMap.sucker.set(speed);
     
     }
