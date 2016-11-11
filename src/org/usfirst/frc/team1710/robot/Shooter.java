@@ -10,7 +10,7 @@ public class Shooter extends Subsystem {
     	RobotMap.shooterL.set(0);
     	
     }
-    public void shooterRun(double speed){
+    public static void shooterRun(double speed){
     	RobotMap.shooterR.set(speed);
     	RobotMap.shooterL.set(-speed);
     
