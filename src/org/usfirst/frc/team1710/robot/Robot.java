@@ -24,6 +24,7 @@ public class Robot extends IterativeRobot {
     	RobotMap.sucker = new Talon(3);
     	RobotMap.intakeL = new Talon(7);
     	RobotMap.intakeR = new Talon(5);
+    	RobotMap.Flipper = new Talon (10);
     }
     
     public void autonomousInit() {
