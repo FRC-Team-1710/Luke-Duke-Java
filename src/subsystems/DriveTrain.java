@@ -14,7 +14,7 @@ public class DriveTrain extends Subsystem {
     public void initDefaultCommand() {
     	
     }
-    public void arcadeDrive(double movepower, double turnpower) {
+    public static void arcadeDrive(double movepower, double turnpower) {
     	RobotMap.driveTrain.arcadeDrive(movepower, turnpower);
     	
     	
