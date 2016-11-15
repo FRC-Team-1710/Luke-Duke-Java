@@ -48,7 +48,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopPeriodic() {
-        DriveTrain.arcadeDrive(RobotMap.driveStick.getRawAxis(1), RobotMap.driveStick.getRawAxis(4));
+        RobotMap.driveTrain.arcadeDrive(RobotMap.driveStick.getRawAxis(1), RobotMap.driveStick.getRawAxis(4));
     }
     
     public void testPeriodic() {
