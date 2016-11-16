@@ -1,7 +1,6 @@
 
 package org.usfirst.frc.team1710.robot;
 
-import subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -48,7 +47,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopPeriodic() {
-        RobotMap.driveTrain.arcadeDrive(RobotMap.driveStick.getRawAxis(1), RobotMap.driveStick.getRawAxis(4));
+        RobotMap.driveTrain.arcadeDrive(RobotMap.driveStick.getRawAxis(4), RobotMap.driveStick.getRawAxis(1)*-1);
     }
     
     public void testPeriodic() {
