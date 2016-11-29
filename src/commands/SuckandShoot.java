@@ -1,5 +1,6 @@
 package commands;
 
+import HelpfulStuff.HelpfulAutoMethods;
 import edu.wpi.first.wpilibj.command.Command;
 import subsystems.Intake;
 import subsystems.Shooter;
@@ -9,6 +10,8 @@ import subsystems.Shooter;
  */
 public class SuckandShoot extends Command {
 
+	boolean done;
+	
     public SuckandShoot() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -21,23 +24,20 @@ public class SuckandShoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Shooter.shooterRun(1);
-    	delay(1000);
+    	HelpfulAutoMethods.delay(1000);
     	Intake.intakeSuck(1);
-    	delay(1000);
+    	HelpfulAutoMethods.delay(1000);
     	Intake.intakeSuck(0);
     	Shooter.shooterRun(0);
+    	done = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
-    }
-    
-    public void delay(int time) {
-    	try {
-    		Thread.sleep(time);
-    	} catch(InterruptedException e) {
-    		e.printStackTrace();
+    	if(done) {
+    		return true;
+    	} else {
+    		return false;
     	}
     }
     
