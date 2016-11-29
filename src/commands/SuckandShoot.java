@@ -21,19 +21,9 @@ public class SuckandShoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Shooter.shooterRun(1);
-    	try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	delay(1000);
     	Intake.intakeSuck(1);
-    	try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	delay(1000);
     	Intake.intakeSuck(0);
     	Shooter.shooterRun(0);
     }
@@ -42,7 +32,15 @@ public class SuckandShoot extends Command {
     protected boolean isFinished() {
         return false;
     }
-
+    
+    public void delay(int time) {
+    	try {
+    		Thread.sleep(time);
+    	} catch(InterruptedException e) {
+    		e.printStackTrace();
+    	}
+    }
+    
     // Called once after isFinished returns true
     protected void end() {
     }
